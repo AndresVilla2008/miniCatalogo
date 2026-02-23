@@ -22,16 +22,16 @@ export class AppComponent {
     }
 
     get total(): number {
-    return this.products.reduce((suma, producto) => suma + producto.price, 0);
+        return this.products.reduce((suma, producto) => suma + producto.price, 0);
     }
 
     precioMaximo: number = 0;
 
     get productosFiltrados(): Product[] {
-    if (this.precioMaximo <= 0 || !this.precioMaximo) {
-        return this.products;
-    }
-    return this.products.filter(p => p.price <= this.precioMaximo);
+        if (this.precioMaximo <= 0 || !this.precioMaximo) {
+            return this.products;
+        }
+        return this.products.filter(p => p.price <= this.precioMaximo);
     }
 
     ordenarAsc() {

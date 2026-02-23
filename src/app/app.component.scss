@@ -1,7 +1,6 @@
-// Variables globales (fácil de cambiar todo desde aquí)
-$primary: #4f46e5;        // índigo suave
+$primary: #4f46e5;        
 $primary-dark: #4338ca;
-$accent: #ec4899;         // rosa/magenta para botones de acción
+$accent: #ec4899;         
 $gray-light: #f3f4f6;
 $gray: #6b7280;
 $gray-dark: #374151;
@@ -12,7 +11,6 @@ $shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
 $border-radius: 12px;
 $transition: all 0.2s ease;
 
-// Reset básico y tipografía
 :host {
   display: block;
   min-height: 100vh;
@@ -27,7 +25,7 @@ $transition: all 0.2s ease;
   padding: 2rem 1rem;
 }
 
-// Título principal
+
 h1 {
   text-align: center;
   color: $primary-dark;
@@ -37,70 +35,16 @@ h1 {
   letter-spacing: -0.025em;
 }
 
-// Sección del formulario
+
 .product-form {
   background: white;
   border-radius: $border-radius;
   box-shadow: $shadow-md;
   padding: 2rem;
   margin-bottom: 2.5rem;
-
-  h2 {
-    margin-top: 0;
-    color: $primary;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.25rem;
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: $gray-dark;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: $transition;
-
-      &:focus {
-        outline: none;
-        border-color: $primary;
-        box-shadow: 0 0 0 3px rgba($primary, 0.1);
-      }
-    }
-  }
-
-  button {
-    background: $primary;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: $transition;
-    width: 100%;
-
-    &:hover {
-      background: $primary-dark;
-      transform: translateY(-1px);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
-  }
 }
 
-// Controles (filtro + ordenar + total)
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -142,78 +86,4 @@ h1 {
       border-color: $gray-dark;
     }
   }
-}
-
-// Lista de productos
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-
-  .product-card {
-    background: white;
-    border-radius: $border-radius;
-    box-shadow: $shadow-sm;
-    padding: 1.5rem;
-    transition: $transition;
-    position: relative;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-md;
-    }
-
-    h3 {
-      margin: 0 0 0.75rem;
-      font-size: 1.25rem;
-      color: $gray-dark;
-    }
-
-    .price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: $primary;
-      margin-bottom: 1rem;
-    }
-
-    button.delete {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: $error;
-      color: white;
-      border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: $transition;
-
-      &:hover {
-        background: darken($error, 10%);
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  .empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 4rem 1rem;
-    color: $gray;
-    font-size: 1.2rem;
-  }
-}
-
-// Mensaje cuando no hay productos
-.empty-message {
-  text-align: center;
-  color: $gray;
-  font-size: 1.3rem;
-  padding: 4rem 0;
-  font-style: italic;
 }

@@ -16,14 +16,6 @@
   </div>
 
   <div class="product-list">
-    <div *ngFor="let product of productosFiltrados" class="product-card">
-      <h3>{{ product.name }}</h3>
-      <div class="price">${{ product.price }}</div>
-      <button class="delete" (click)="eliminarProducto(product.id)">×</button>
-    </div>
-
-    <div *ngIf="productosFiltrados.length === 0" class="empty-state">
-      No hay productos que coincidan con el filtro 😕
-    </div>
+    <app-product-list [products]="productosFiltrados" (productDelete)="eliminarProducto($event)"></app-product-list>
   </div>
 </div>

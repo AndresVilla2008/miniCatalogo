@@ -2,10 +2,10 @@
 
 <div *ngFor="let product of products" style="border: 1px solid #ccc; margin: 10px; padding: 15px; border-radius: 8px;">
   <h3>{{ product.name }}</h3>
-  <p>Precio: ${{ product.price }}</p>
-  <button (click)="eliminarProducto(product.id)">Eliminar</button>
+  <div class="price">${{ product.price }}</div>
+  <button class="delete" (click)="eliminarProducto(product.id)">Eliminar</button>
 </div>
 
-<div *ngIf="products.length === 0">
+<div *ngIf="products.length === 0" class="empty-state">
   <p>No hay productos aún. Agrega uno arriba.</p>
 </div>
